@@ -1,0 +1,189 @@
+//Prueba
+const $HIDDEN = document.getElementById("hidden");
+
+document.addEventListener("click", async (e) => {
+
+  // Select de Agendamiento
+  const $SLT = document.querySelector("select"),
+    $SLT2 = document.getElementById("select2"),
+    $SLT3 = document.getElementById("select3"),
+    $SLTQE = document.getElementById("exampleDataList");
+
+
+  // Empleado
+  const $EXT = document.getElementById("extension").value,
+    $EXTC = document.getElementById("extensionC").value,
+    $EXTN = document.getElementById("extensionN").value,
+    $EXTQ = document.getElementById("extensionQ").value,
+
+    $FECHA = document.getElementById("fecha").value = new Date().toLocaleDateString(),
+    $FECHAC = document.getElementById("fechaC").value = new Date().toLocaleDateString(),
+    $FECHAN = document.getElementById("fechaN").value = new Date().toLocaleDateString(),
+    $FECHAQ = document.getElementById("fechaQ").value = new Date().toLocaleDateString(),
+
+    $NOMBRE = document.getElementById("nombre").value,
+    $NOMBREC = document.getElementById("nombreC").value,
+    $NOMBREN = document.getElementById("nombreN").value,
+    $NOMBREQ = document.getElementById("nombreQ").value,
+
+
+    // Titular
+    $TEL = document.getElementById("telefono").value,
+    $TELC = document.getElementById("telefonoC").value,
+    $TELQ = document.getElementById("telefonoQ").value,
+
+    $TELN = document.getElementById("telefonoN").value,
+    $TELN2 = document.getElementById("telefonoN2").value,
+    $TELN3 = document.getElementById("telefonoN3").value,
+
+    $NOMBRE_T = document.getElementById("nombre_t").value,
+    $NOMBRE_TC = document.getElementById("nombre_tC").value,
+    $NOMBRE_TN = document.getElementById("nombre_tN").value,
+    $NOMBRE_TQ = document.getElementById("nombre_tQ").value,
+
+    $FECHA_T = document.getElementById("fecha_t").value,
+    $FECHA_TC = document.getElementById("fecha_tC").value,
+
+
+    $OBS = document.getElementById("obs").value,
+    $OBSC = document.getElementById("obsC").value,
+    $OBSN = document.getElementById("obsN").value,
+    $OBSQ = document.getElementById("obsQ").value,
+
+    $COPIAR = document.getElementById("copiar"),
+    $COPIARC = document.getElementById("copiarC"),
+    $COPIARN = document.getElementById("copiarN");
+
+
+
+  if (e.target.matches("#copiar")) {
+    try {
+      await navigator.clipboard.writeText(`Se marcar al ${$TEL} Contesta el titular ${$NOMBRE_T} Se agenda para ${$FECHA_T} ${$SLT.value} ${$SLT2.value} ${$SLT3.value} observacion ${$OBS || "NA"} Gestiona ${$NOMBRE} ${$FECHA} Ext ${$EXT}`)
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-start',
+        showConfirmButton: false,
+        timer: 5000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: `Se marcar al ${$TEL} Contesta el titular ${$NOMBRE_T} Se agenda para ${$FECHA_T} ${$SLT.value} ${$SLT2.value} ${$SLT3.value} observacion ${$OBS || "NA"} Gestiona ${$NOMBRE} ${$FECHA} Ext ${$EXT}`
+      })
+
+      //limpiando inputs
+      document.getElementById("telefono").value = "";
+      document.getElementById("nombre_t").value = "";
+      document.getElementById("fecha_t").value = "";
+      document.querySelector("select").value = "AM";
+      document.getElementById("select2").value = "No conjunto";
+      document.getElementById("select3").value = "Sin Restriccion";
+      document.getElementById("obs").value = "";
+
+
+    } catch (err) {
+      console.error('Error al copiar al portapapeles:', err)
+    }
+  }
+
+
+  if (e.target.matches("#copiarC")) {
+    try {
+      await navigator.clipboard.writeText(`Se marcar al ${$TELC} Contesta el titular ${$NOMBRE_TC} Indica que nos comuniquemos ${$FECHA_TC} observacion ${$OBSC || "NA"} Gestiona ${$NOMBREC} ${$FECHAC} Ext ${$EXTC}`)
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-start',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: `Se marcar al ${$TELC} Contesta el titular ${$NOMBRE_TC} Indica que nos comuniquemos ${$FECHA_TC} observacion ${$OBSC || "NA"}  Gestiona ${$NOMBREC} ${$FECHAC} Ext ${$EXTC}`
+      })
+
+      //limpiando inputs
+      document.getElementById("telefonoC").value = "";
+      document.getElementById("nombre_tC").value = "";
+      document.getElementById("fecha_tC").value = "";
+      document.getElementById("obsC").value = "";
+
+
+    } catch (err) {
+      console.error('Error al copiar al portapapeles:', err)
+    }
+  }
+
+  if (e.target.matches("#copiarN")) {
+    try {
+      await navigator.clipboard.writeText(`Se marcar al ${$TELN} - ${$TELN2} - ${$TELN3} Titular ${$NOMBRE_TN} observacion ${$OBSN || "NA"} Gestiona ${$NOMBREN} ${$FECHAN} Ext ${$EXTN}`)
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-start',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: `Se marcar al ${$TELN} - ${$TELN2} - ${$TELN3} Titular ${$NOMBRE_TN} observacion ${$OBSN || "NA"} Gestiona ${$NOMBREN} ${$FECHAN} Ext ${$EXTN}`
+      })
+
+      document.getElementById("telefonoN").value = "";
+      document.getElementById("telefonoN2").value = "";
+      document.getElementById("telefonoN3").value = "";
+      document.getElementById("nombre_tN").value = "";
+      document.getElementById("obsN").value = "";
+
+    } catch (err) {
+      console.error('Error al copiar al portapapeles:', err)
+    }
+  }
+
+  if (e.target.matches("#copiarQ")) {
+    try {
+      await navigator.clipboard.writeText(`QC - ${$SLTQE.value} Se marcar al ${$TELQ} Titular ${$NOMBRE_TQ} observacion ${$OBSQ || "NA"} Gestiona ${$NOMBREQ} ${$FECHAQ} Ext ${$EXTQ}`)
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-start',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: `QC - ${$SLTQE.value} Se marcar al ${$TELQ} Titular ${$NOMBRE_TQ} observacion ${$OBSQ || "NA"} Gestiona ${$NOMBREQ} ${$FECHAQ} Ext ${$EXTQ}`
+      })
+
+      document.getElementById("telefonoQ").value = "";
+      document.getElementById("nombre_tQ").value = "";
+      document.getElementById("exampleDataList").value = "";
+      document.getElementById("obsQ").value = "";
+
+    } catch (err) {
+      console.error('Error al copiar al portapapeles:', err)
+    }
+  }
+})
+

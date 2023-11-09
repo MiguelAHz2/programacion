@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipificador Migraciones</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./archivos/bootstrap.min.css">
+
+
+</head>
+<body >
+    
+    <div class="container-fluid p-1 bg-dark text-white text-center flex-box" id="titulo">
+        <h1 class="text-center">TIPIFICADOR MIGRACIONES</h1>
+      </div>
+      <!-- Botón para abrir la barra lateral -->
+    <button class="openbtn" onclick="toggleNav()" style="background-color: transparent; font-size: 35px;">☰</button>
+
+    <!-- Barra Lateral -->
+    <div>
+    <div id="mySidebar" class="sidebar">
+        <a id="desp" href="javascript:void(0)" class="closebtn" onclick="toggleNav()">☰</a>
+        <div class="col-8 text-center" style="background-color: transparent; color: white;">
+          <label for="selectFondos" style="font-size: 15px;"><b>Selecciona un fondo:</b></label>
+        <select style="color: black;" id="selectFondos" onchange="cambiarFondo()">
+            <option value="fondo1">Fondo 1</option>
+            <option value="fondo2">Fondo 2</option>
+            <option value="fondo3">Fondo 3</option>
+            <option value="fondo4">Fondo 4</option>
+        </select>
+          </div>
+
+<div id="lista">
+      <h5 class="mt-4 text-center"><b>Aplicativos Migraciones</b></h5>
+      <ul class="col-10">
+        <li><a href="http://10.201.6.254/agendador-ui/" style="color: white;  text-decoration: none;" target="_blank">Agendador</a></li>
+        <li><a href="https://10.203.113.119/oc/bes/sm/login/login-colombia.html?redirectUrl=%2Fbes%2Fsm%2Flogin%2Foperator_ctz.html%3Ftimestamp%3D1606741992526&logoutReason=NoLogin" style="color: white;  text-decoration: none;" target="_blank">Greta</a></li>
+        <li><a href="https://atento-movistar.go-contact.com/login.html" style="color: white;  text-decoration: none;" target="_blank">Go Contact</a></li>
+        <li><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=VNBWEwz7yUWWYwh8J4u_GClKzO9jz9BDrQzs1WWfi6VUNEcxR1NLSzZKWVI0MjRUR0QzMktZN0RaWS4u" style="color: white;  text-decoration: none;" target="_blank">Tipificador</a></li>
+        <li><a href="http://nwhomepage/soluciones/cotizadores/" style="color: white;  text-decoration: none;" target="_blank">Cotizador</a></li>
+        <li><a href="http://172.16.183.76/ControlAsistencia/login.php" style="color: white;  text-decoration: none;" target="_blank">G.A.P</a></li>
+        <li><a href="http://172.16.183.76/endirecto/web/index.php/main/login" style="color: white;  text-decoration: none;" target="_blank">EnDirecto</a></li>
+        <li><a href="http://172.16.183.59/tm_eccus/index.jsp" style="color: white;  text-decoration: none;" target="_blank">ECCUS (Calidad)</a></li>
+        <li><a href="https://cafesite4.atento.com.co:11003/cafe_Telefonica/course/view.php?id=111" style="color: white;  text-decoration: none;" target="_blank">Café Telefónica</a></li>
+        <li><a href="https://cajerokactus.atento.com.co:8443/WebKactus/frmLogin.aspx" style="color: white;  text-decoration: none;" target="_blank">Kactus</a></li>
+    </ul>
+  </div>
+    </div>
+    </div>
+
+
+    <div class="container mt-3 col-sm-auto">
+        <div class="row">
+        <h1><kbd>Selecciona una opción:</kbd></h1>
+    </div>
+    <div class="row">
+    <div class="col-sm-auto text-center">
+        <button type="button" id="boton1" class="btn-block btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+          <b>INTENTO DE CONTACTO</b>
+        </button>
+    </div>
+    <div class="col-sm text-center">
+        <button type="button" id="boton2" class="btn-block btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal1">
+            <b>AGENDA</b>
+          </button>
+    </div>
+    <div class="col-sm text-center">
+          <button type="button" id="boton3" class="btn-block btn btn-danger" data-bs-toggle="modal" data-bs-target="#myModal2">
+            <b>QUIEBRE</b>
+          </button>
+    </div>
+    <div class="col-sm text-center">
+          <button type="button" id="boton4" class="btn-block btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal3">
+             <b>COMPROMISO DE LLAMADA</b>
+          </button>
+    </div>
+      </div>
+      </div>
+      
+      <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header" id="modal1">
+              <h3 class="modal-title">Intento de contacto</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body" id="intentos">
+              <div class="mb-3 gap-3">
+                <p class="mb-1" style="text-align: center;"><b>ASESOR</b></p>
+                <label for="goava"></label>
+                <select name="goava" id="goava" class="col-sm-3">
+                  <!-- Agrega una opción sin valor seleccionado -->
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <option value="Go Contact.">Go Contact</option>
+                  <option value="Avaya">Avaya</option>
+              </select>
+                <label for="extava" class=></label>                 
+                <input type="text" id="extava" class="col-sm-3" placeholder="Ext. Avaya">
+                <label for="logava" class=></label>                 
+                <input type="text" id="logava" class="col-sm-3 mb-3" placeholder="Login Avaya">    
+                <label for="nomasesor"></label>                
+                <input type="text" id="nomasesor" placeholder="Nombre del Asesor" class="mb-4">
+               </div>
+
+               <div>
+                <p class="mb-1" style="text-align: center;"><b>TITULAR</b></p>
+                <label for="num1"></label>
+                <input type="number" id="num1" placeholder="Número 1">
+                <label for="contesta1">Contesta:</label>
+                <select id="contesta1">
+                    <option value="SI">SI</option>
+                    <option value="NO">NO</option>
+                </select>
+                <label for="motivo"></label>
+                <input type="text" id="motivo" placeholder="Motivo">
+                <label for="num2"></label>
+                <input type="number" id="num2" placeholder="Número 2">
+                <label for="contesta2">Contesta:</label>
+                <select id="contesta2">
+                    <option value="SI">SI</option>
+                    <option value="NO">NO</option>
+                </select>
+                <label for="motivo"></label>
+                <input type="text" id="motivo2" placeholder="Motivo">
+                <label for="nombreTitular"></label>
+                <input type="text" id="nombreTitular" placeholder="Nombre de titular">
+                <div class="form-check form-switch input-group gap-3" id="qin">
+                  <input type="checkbox" class="form-check-input " id="qintentos">
+                  <label class="form-check-label" for="qintentos"></label>
+                  <p>Quiebre por intentos</p>
+                </div>
+                <button class="btn-sm mt-3 btn-outline-primary" id="generarIntento">Generar intento</button>
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer" id="modal1">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+
+      </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="myModal1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header" id="modal2">
+                  <h3 class="modal-title">Agenda</h3>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body" id="agendas">
+                  <div class="mb-3 gap-3">
+                  <p class="mb-1" style="text-align: center;"><b>ASESOR</b></p>
+                  <label for="goava1"></label>
+                  <select name="goava1" id="goava1" class="col-sm-3">
+                    <!-- Agrega una opción sin valor seleccionado -->
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Go Contact.">Go Contact</option>
+                    <option value="Avaya">Avaya</option>
+                </select>
+                  <label for="extava1" class=></label>                 
+                  <input type="text" id="extava1" class="col-sm-3" placeholder="Ext. Avaya">
+                  <label for="logava1" class=></label>                 
+                  <input type="text" id="logava1" class="col-sm-3 mb-3" placeholder="Login Avaya">    
+                  <label for="nomasesor"></label>                
+                  <input type="text" id="nomasesor1" placeholder="Nombre del Asesor" class="mb-4">
+                 </div>
+
+                 <div class="gap-3">
+                  <p class="mb-1" style="text-align: center;"><b>TITULAR</b></p>
+                    <label for="nombreAgenda"></label>
+                    <input type="text" id="nombreAgenda" placeholder="Nombre del titular">
+                    <label for="numAgenda"></label>
+                    <input type="number" id="numAgenda" placeholder="Número">
+                    <label for="doc"></label>
+                    <input type="number" id="doc" placeholder="Núm. de documento">
+                    <label for="qcontesta"></label>
+                    <select name="qcontesta" id="qcontesta">
+                      <option value="Titular">Titular</option>
+                      <option value="Tercero-Encargado">Tercero-Encargado</option>
+                    </select>
+                    <label for="nomagenda"></label>
+                    <input type="text" id="nomagenda" placeholder="Nombre de quien contesta">
+                    <label for="direccion"></label>
+                    <input type="text" id="direccion" placeholder="Dirección" class="col-sm-6 mt-3">
+                    <label for="barrio"></label>
+                    <input type="text" id="barrio" placeholder="Barrio" class="col-sm-5 mb-4">
+                    </div>
+
+                    <div class="mb-3 gap-3">
+                    <p class="mb-1" style="text-align: center;"><b>FECHA AGENDAMIENTO</b></p>
+                    <label for="fechaAgenda"></label>
+                    <input type="date" id="fechaAgenda">
+                    <label for="horaAgenda"></label>
+                    <select id="horaAgenda">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                    <label for="indicaciones"></label>
+                    <textarea id="indicaciones" placeholder="Indicaciones"></textarea>
+                    <button class="btn-sm mt-1 btn-outline-success" id="generarAgenda">Generar Agenda</button>
+                </div>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer" id="modal2">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+          
+              </div>
+            </div>
+            </div>
+
+            <div class="modal fade" id="myModal2">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+          
+                <!-- Modal Header -->
+                <div class="modal-header" id="modal3">
+                  <h3 class="modal-title">Quiebre</h3>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+          
+                <!-- Modal body -->
+                <div class="modal-body" id="quiebres">
+                  <div class="mb-3 gap-3">
+                    <p class="mb-1" style="text-align: center;"><b>ASESOR</b></p>
+                    <label for="goava2"></label>
+                    <select name="goava2" id="goava2" class="col-sm-3">
+                      <!-- Agrega una opción sin valor seleccionado -->
+                      <option value="" disabled selected>Selecciona una opción</option>
+                      <option value="Go Contact.">Go Contact</option>
+                      <option value="Avaya">Avaya</option>
+                  </select>
+                    <label for="extava2" class=></label>                 
+                    <input type="text" id="extava2" class="col-sm-3" placeholder="Ext. Avaya">
+                    <label for="logava2" class=></label>                 
+                    <input type="text" id="logava2" class="col-sm-3 mb-3" placeholder="Login Avaya">    
+                    <label for="nomasesor"></label>                
+                    <input type="text" id="nomasesor2" placeholder="Nombre del Asesor" class="mb-4">
+                   </div>
+
+                   <div>
+                    <p class="mb-1" style="text-align: center;"><b>TITULAR</b></p>
+            <label for="numQuiebre"></label>
+            <input type="number" id="numQuiebre" placeholder="Número">
+            <label for="nombreQuiebre"></label>
+            <input type="text" id="nombreQuiebre" placeholder="Nombre de titular">
+            <label for="motivoQuiebre"></label>
+            <input type="text" id="motivoQuiebre" placeholder="Motivo de quiebre" class="mb-3">
+            <button class="btn-sm mt-2 btn-outline-danger" id="generarQuiebre">Generar Quiebre</button>
+                </div>
+                </div>
+           
+                <!-- Modal footer -->
+                <div class="modal-footer" id="modal3">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+          
+              </div>
+            </div>
+            </div>
+
+            <div class="modal fade" id="myModal3">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+              
+                    <!-- Modal Header -->
+                    <div class="modal-header" id="modal4">
+                      <h3 class="modal-title">Compromiso de llamada</h3>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+              
+                    <!-- Modal body -->
+                    <div class="modal-body" id="compromisos">  
+                      <div class="mb-3 gap-3">
+                        <p class="mb-1" style="text-align: center;"><b>ASESOR</b></p>
+                        <label for="goava3"></label>
+                        <select name="goava3" id="goava3" class="col-sm-3">
+                          <!-- Agrega una opción sin valor seleccionado -->
+                          <option value="" disabled selected>Selecciona una opción</option>
+                          <option value="Go Contact.">Go Contact</option>
+                          <option value="Avaya">Avaya</option>
+                      </select>
+                        <label for="extava3" class=></label>                 
+                        <input type="text" id="extava3" class="col-sm-3" placeholder="Ext. Avaya">
+                        <label for="logava3" class=></label>                 
+                        <input type="text" id="logava3" class="col-sm-3 mb-3" placeholder="Login Avaya">    
+                        <label for="nomasesor"></label>                
+                        <input type="text" id="nomasesor3" placeholder="Nombre del Asesor" class="mb-4">
+                       </div>
+           <div>          
+            <p class="mb-1" style="text-align: center;"><b>TITULAR</b></p> 
+            <label for="numCompromiso"></label>
+            <input type="number" id="numCompromiso" placeholder="Número">
+            <label for="nombreCompromiso"></label>
+            <input type="text" id="nombreCompromiso" placeholder="Nombre del titular">
+            <label for="motivoCompromiso"></label>
+            <input type="text" id="motivoCompromiso" placeholder="Motivo">
+            <label for="fechaCompromiso"></label>
+            <input type="datetime-local" id="fechaCompromiso">
+            <button class="btn-sm mt-2 btn-outline-info" id="generarCompromiso">Generar Compromiso</button>
+            </div>
+                    </div>  
+                   
+                    <!-- Modal footer -->
+                    <div class="modal-footer" id="modal4">
+                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+        
+                  
+                </div>
+
+        </div>
+      </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="./archivos/bootstrap.bundle.min.js.descargar"></script>
+      <script src="./archivos/sweetalert2@11.js.descargar"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background: url('./imagen/7.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+#selectFondos {
+    padding: 10px;
+    font-size: 10px;
+    margin-top: 10px;
+    background-color: #1cc5227e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#selectFondos:hover {
+    background-color: #00ff0d81;
+}
+#lista {
+    background-color: #33333363;
+        color: white;
+        padding: 5px;
+        text-align: center;
+}
+h3 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#desp {
+    color: transparent; 
+    text-decoration: none; 
+    font-size: 35px; 
+    padding: 10px;
+    background-color: transparent;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+a {
+    display: block;
+    background-color: #1cc5227e;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+a:hover {
+    background-color: #00ff0d81;
+}
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #00000071;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: white;
+}
+
+/* Estilo para el contenido de la página */
+.content {
+    transition: margin-left 0.5s;
+    padding: 16px;
+}
+
+/* Estilo para el botón de abrir la barra lateral */
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+/* Estilo para cerrar la barra lateral en pantallas pequeñas */
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #6687aa7c;
+}
+#myModal {
+    background-color: rgba(0, 0, 255, 0);
+    backdrop-filter: blur(10px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#myModal1 {
+    background-color: rgba(0, 0, 255, 0);
+    backdrop-filter: blur(10px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#myModal2 {
+    background-color: rgba(0, 0, 255, 0);
+    backdrop-filter: blur(10px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#myModal3 {
+    background-color: rgba(0, 0, 255, 0);
+    backdrop-filter: blur(10px);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#qin {
+    font-size: 1.4rem;
+    margin-top: 20px;
+    margin: 10px;
+
+}
+#boton1 {
+    background-color: rgba(0, 204, 255, 0.158); /* Fondo transparente */
+    border: none; /* Sin borde */
+    color: rgb(0, 0, 0); /* Color de texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 20px; /* Esquinas redondeadas */
+    cursor: pointer;
+}
+#boton1:hover {
+    box-shadow: 2px 5px 10px rgba(0, 238, 255, 0.993); /* Sombra */
+}
+#boton2 {
+    background-color: rgba(0, 128, 0, 0.226); /* Fondo transparente */
+    border: none; /* Sin borde */
+    color: rgb(0, 0, 0); /* Color de texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 20px; /* Esquinas redondeadas */
+    cursor: pointer;
+}
+#boton2:hover {
+    box-shadow: 2px 5px 10px rgba(0, 255, 42, 0.993); /* Sombra */
+}
+#boton3 {
+    background-color: rgba(255, 0, 0, 0.158); /* Fondo transparente */
+    border: none; /* Sin borde */
+    color: rgb(0, 0, 0); /* Color de texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 20px; /* Esquinas redondeadas */
+    cursor: pointer;
+}
+#boton3:hover {
+    box-shadow: 2px 5px 10px rgba(255, 0, 0, 0.993); /* Sombra */
+}
+#boton4 {
+    background-color: rgba(255, 255, 0, 0.158); /* Fondo transparente */
+    border: none; /* Sin borde */
+    color: rgb(0, 0, 0); /* Color de texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 20px; /* Esquinas redondeadas */
+    cursor: pointer;
+}
+#boton4:hover {
+    box-shadow: 2px 5px 10px rgba(251, 255, 0, 0.993); /* Sombra */
+}
+#modal1 {
+    background-color: rgb(0, 183, 255);
+}
+#modal2 {
+    background-color: green;
+}
+#modal3 {
+    background-color:red;
+}
+#modal4 {
+    background-color: yellow;
+}
+#generarIntento {
+    border-radius: 10px;
+    color: black;
+    border-style: solid;
+    border-color: black;
+    font-size: 22px;
+    background-color: rgba(0, 183, 255, 0.445);
+}
+#generarIntento:hover {
+    background-color:rgb(0, 183, 255) ;
+}
+#generarAgenda {
+    border-radius: 10px;
+    color: black;
+    border-style: solid;
+    border-color: black;
+    font-size: 22px;
+    background-color: rgba(0, 128, 0, 0.445);
+}
+#generarAgenda:hover {
+    background-color: green;
+}
+#generarQuiebre {
+    border-radius: 10px;
+    color: black;
+    border-style: solid;
+    border-color: #000000;
+    font-size: 22px;
+    background-color: rgba(255, 0, 0, 0.445);
+}
+#generarQuiebre:hover {
+    background-color: red;
+}
+#generarCompromiso{
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    border-style: solid;
+    border-color: #000000;
+    font-size: 22px;
+    background-color: rgba(255, 255, 0, 0.445);
+}
+#generarCompromiso:hover{
+    background-color: yellow;
+}
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: rgba(83, 83, 83, 0.479);
+    border: 1px solid #ccc; /* Borde de las celdas */
+    border-radius: 10px;
+    color: white;
+    border-style: solid;
+    border-color: #000000;
+}
+.btn {
+    margin-top: 20px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+#output {
+    margin-top: 20px;
+    margin-left: 10px;
+}
